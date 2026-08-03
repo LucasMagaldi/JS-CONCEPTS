@@ -41,6 +41,50 @@ function greeting(name) {
 
 function execute(callback) {
     callback("Alice");
-}
+} 
 
 execute(greeting);
+
+function execute(callback) {
+    callback()
+}
+
+execute(() => {
+    console.log(10)
+})
+
+// Not all callback functions are syncronous
+
+const numers = [1,2,3,4,5,6,7,8]
+
+numers.forEach((number) => {
+    console.log(number)
+})
+
+
+//Asyncronous
+
+// SetTimeout register callback  --> callback on holding --> 2 seconds later --> callback executed 
+
+console.log(`A`)
+
+setTimeout(() => {
+    console.log(`B`)
+}, 2000)
+
+console.log(`C`)
+
+
+/* Callback Hell */
+
+//hard do read
+//hard to debug
+// difficultly establishing error handling
+
+findUser(id, (user) => {
+    findOrders(user.id, (orders) => {
+        findPayment(order[0].id, (payment) => {
+            console.log(payment)
+        })
+    })
+})
