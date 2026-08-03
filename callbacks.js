@@ -5,6 +5,7 @@
  * requests, event handlers), but they work the same way for plain
  * synchronous code, as shown below.
  *
+ * Promises and Async/await to organize better the assyncronous flow, but keeping use callback internally 
  * Each example below is self-contained. Uncomment one block at a time to
  * run it; only Example 2 is active by default.
  */
@@ -73,6 +74,14 @@ setTimeout(() => {
 }, 2000)
 
 console.log(`C`)
+
+/* Callback and Event Loop */
+
+// setTimeout(() => { console. log(`Test`)}, 2000)
+//Callback is not executed immediatly
+//Its send to Web APIs
+// then to callback queue
+// and finnaly to call stack when Event Loop allows
 
 
 /* Callback Hell */
